@@ -3,18 +3,15 @@ import { useState } from 'react';
 export default function GamingGearAdmin() {
   // Estado para el producto a agregar
   const [newProduct, setNewProduct] = useState({
-    name: '',
-    price: '',
-    stock: '',
-    description: ''
+    nombre: '',
+    categoria: '',
+    precio: '',
+    cantidad: '',
+    descripcion: ''
   });
 
   // Lista de productos inicial
-  const [products, setProducts] = useState([
-    { id: 1, name: 'Teclado Mecánico', price: 120, stock: 45 },
-    { id: 2, name: 'Ratón Gaming', price: 80, stock: 30 },
-    { id: 3, name: 'Auriculares RGB', price: 55, stock: 12 }
-  ]);
+  const [products, setProducts] = useState([]);
 
   // Estado para controlar la vista en dispositivos móviles
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,7 +26,7 @@ export default function GamingGearAdmin() {
   };
 
   // Agregar un nuevo producto
-  const handleAddProduct = (e) => {
+  const guardarProducto = (e) => {
     if (e) e.preventDefault();
     
     // Validación básica
@@ -98,6 +95,18 @@ export default function GamingGearAdmin() {
                   placeholder="Ej: Teclado Mecánico"
                 />
               </div>
+
+              <div className="mb-4">
+                <label className="block mb-2">Categoria</label>
+                <input
+                  type="text"
+                  name="categoria"
+                  value={newProduct.name}
+                  onChange={handleInputChange}
+                  className="w-full p-2 bg-gray-700 rounded"
+                  placeholder="Categoria"
+                />
+              </div>
               
               <div className="mb-4">
                 <label className="block mb-2">Precio</label>
@@ -135,7 +144,7 @@ export default function GamingGearAdmin() {
               </div>
               
               <button
-                onClick={handleAddProduct}
+                onClick={null}
                 className="w-full bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded"
               >
                 Agregar Producto
