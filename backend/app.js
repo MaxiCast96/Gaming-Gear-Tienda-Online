@@ -1,6 +1,7 @@
 //Importar libreria express
 
 import express from 'express';
+import cors from 'cors'
 import categoriesRoutes from "../backend/src/routes/categories.js"
 import cartRoutes from  '../backend/src/routes/cart.js'
 import customersRoutes from '../backend/src/routes/customers.js'
@@ -15,6 +16,13 @@ import reviewsRoutes from '../backend/src/routes/reviews.js'
 //Creo una constante que es igual a la libreria
 
 const app = express();
+
+app.use(
+  cors({
+    origin: "*", // Dominio del cliente
+    credentials: true, // Permitir envío de cookies y credenciales
+  })
+);
 
 app.use(express.json());
 

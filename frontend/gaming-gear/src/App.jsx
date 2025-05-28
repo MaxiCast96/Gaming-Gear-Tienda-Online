@@ -17,6 +17,11 @@ import Categoria from "./pages/categoria";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import NoticiaDetalle from "./pages/noticiaDetalle";
+import UserManage from "./pages/admin/userManage"
+import ProductManage from "./pages/admin/productManage";
+import OrderManage from "./pages/admin/orderManage";
+import ClientSupport from "./pages/admin/clientSupport";
+import { User } from "lucide-react";
 
 
 function App() {
@@ -30,13 +35,13 @@ function App() {
         <Nav />
         <main className="flex-grow w-full">
           <Routes>
-            <Route path="/" element={<Inicio />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/account" element={<UserProfile />} />
+            <Route path="/" element={<UserManage />} />
+            <Route path="/categories" element={<ProductManage />} />
+            <Route path="/account" element={< UserProfile/>} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/products" element={<ProductDetail />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/news" element={<Noticias />} />
+            <Route path="/about-us" element={<ClientSupport />} />
+            <Route path="/news" element={<OrderManage />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/privacidad" element={<Login />} />
             <Route path="/terminos" element={<TerminosCondiciones />} />
