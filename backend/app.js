@@ -11,6 +11,9 @@ import ordersRoutes from '../backend/src/routes/orders.js'
 import paymentRoutes from '../backend/src/routes/payments.js'
 import productsRoutes from '../backend/src/routes/products.js'
 import reviewsRoutes from '../backend/src/routes/reviews.js'
+import registerRoutes from './src/routes/register.js'
+import loginRoute from '../backend/src/routes/login.js'
+import recoveryPasswordRoutes from '../backend/src/routes/recoveryPassword.js'
 
 //Creo una constante que es igual a la libreria
 
@@ -29,6 +32,10 @@ app.use("/api/payments", paymentRoutes);
 app.use("/api/products", productsRoutes);
 app.use("/api/reviews", reviewsRoutes);
 
+
+app.use("/api/register", registerRoutes); // Ahora tendrás /api/register/employee y /api/register/customer
+app.use("/api/login", loginRoute);
+app.use("/api/RecoveryPassword", recoveryPasswordRoutes);
 //Exporto la constante para poder usar express en otros archivos
 
 export default app;

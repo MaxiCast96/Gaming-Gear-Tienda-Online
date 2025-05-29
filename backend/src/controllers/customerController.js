@@ -28,7 +28,17 @@ customerController.deleteCliente = async (req, res) => {
 // UPDATE
 customerController.updateCliente = async (req, res) => {
   const { nombre, edad, dui, correoElectronico, direccion, telefono } = req.body;
-  await Cliente.findByIdAndUpdate(req.params.id, { nombre, edad, dui, correoElectronico, direccion, telefono }, { new: true });
+  await Cliente.findByIdAndUpdate(req.params.id, 
+    { 
+      nombre, 
+      edad, 
+      dui, 
+      correoElectronico, 
+      direccion, 
+      telefono 
+    }, 
+    { new: true }
+  );
   res.json({ message: "Cliente actualizado" });
 };
 

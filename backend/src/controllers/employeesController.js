@@ -24,7 +24,18 @@ employeesController.deleteEmpleado = async (req, res) => {
 
 employeesController.updateEmpleado = async (req, res) => {
   const { nombre, rol, edad, dui, correoElectronico, telefono } = req.body;
-  await Empleado.findByIdAndUpdate(req.params.id, { nombre, rol, edad, dui, correoElectronico, telefono }, { new: true });
+  await Empleado.findByIdAndUpdate(
+    req.params.id, 
+    { 
+      nombre, 
+      rol, 
+      edad, 
+      dui, 
+      correoElectronico, 
+      telefono 
+    }, 
+    { new: true }
+  );
   res.json({ message: "Empleado actualizado" });
 };
 

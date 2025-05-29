@@ -18,9 +18,9 @@ const orderSchema = new Schema(
         description: "Productos a entregar",
       },
       pago: {
-        type: Schema.Types.ObjectId,
-        ref: "Pago",
+        type: String,
         description: "Método de pago",
+        enum: ['efectivo', 'tarjeta_credito', 'tarjeta_debito', 'transferencia', 'paypal', 'bitcoin', 'otro'],
       },
     },
     { timestamps: true }
