@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const URI = "mongodb://0.0.0.0:27017/GamingGear";
+const URI = "mongodb+srv://prueba:prueba@clusterdeptc.yifegsq.mongodb.net/GamingGear";
 
 mongoose.connect(URI);
 
