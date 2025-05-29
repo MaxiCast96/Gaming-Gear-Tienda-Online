@@ -14,7 +14,6 @@ import reviewsRoutes from '../backend/src/routes/reviews.js'
 import registerRoutes from './src/routes/register.js'
 import loginRoute from '../backend/src/routes/login.js'
 import recoveryPasswordRoutes from '../backend/src/routes/recoveryPassword.js'
-
 //Creo una constante que es igual a la libreria
 
 const app = express();

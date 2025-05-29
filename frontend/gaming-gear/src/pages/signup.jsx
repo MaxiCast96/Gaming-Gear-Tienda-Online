@@ -28,7 +28,7 @@ export default function RegistrationInterface() {
     setLoading(true);
 
     try {
-      const response = await axios.post('https://gaming-gear-tienda-online.onrender.com/api/register', {
+      const response = await axios.post('/api/register', {
         userType: 'customer',
         nombre: formData.nombre,
         edad: Number(formData.edad),
