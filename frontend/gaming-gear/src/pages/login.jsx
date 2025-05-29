@@ -25,7 +25,7 @@ export default function GamingLoginInterface() {
     try {
       console.log('Intentando login con:', { email }); // Para debugging
       
-      const response = await axios.post('/api/login', { email, password });
+      const response = await axios.post('https://gaming-gear-tienda-online.onrender.com/api/login', { email, password });
       console.log('Respuesta del servidor:', response.data); // Para debugging
       
       const { success, message, userType, token, user } = response.data;

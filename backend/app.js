@@ -16,6 +16,15 @@ import loginRoute from '../backend/src/routes/login.js'
 import recoveryPasswordRoutes from '../backend/src/routes/recoveryPassword.js'
 //Creo una constante que es igual a la libreria
 
+import cors from "cors";
+
+app.use(
+    cors({
+        origin: "https://gaming-gear-tienda-online-zkoh.vercel.app",
+        credentials: true
+    })
+);
+
 const app = express();
 
 app.use(express.json());
