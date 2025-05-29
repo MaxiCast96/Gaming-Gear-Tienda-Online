@@ -16,7 +16,7 @@ import ProductDetail from "./pages/productDetail";
 import AboutUs from "./pages/aboutUs";
 import TerminosCondiciones from "./pages/terminosCondiciones";
 import ResenasProducto from "./pages/resenasProductos";
-import PantallaCheckout from "./pages/PantallaCheckout";
+import PantallaCheckout from "./pages/pantallaCheckout";
 import CarritoCompras from "./pages/carritoCompras";
 import Noticias from "./pages/noticias";
 import Favorites from "./pages/favoritos";
