@@ -18,6 +18,11 @@ import recoveryPasswordRoutes from '../backend/src/routes/recoveryPassword.js'
 
 import cors from "cors";
 
+
+const app = express();
+
+app.use(express.json());
+
 app.use(
     cors({
         origin: "https://gaming-gear-tienda-online-zkoh.vercel.app",
@@ -25,9 +30,6 @@ app.use(
     })
 );
 
-const app = express();
-
-app.use(express.json());
 
 app.use("/api/categories", categoriesRoutes);
 app.use("/api/cart", cartRoutes);
