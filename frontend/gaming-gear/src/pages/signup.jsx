@@ -22,6 +22,8 @@ export default function RegistrationInterface() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);

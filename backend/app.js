@@ -22,6 +22,9 @@ import passwordRecoveryRoutes from '../backend/src/routes/passwordRecovery.js';
 
 //Creo una constante que es igual a la libreria
 
+import cors from "cors";
+
+
 const app = express();
 
 app.use(cors({
@@ -34,6 +37,14 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 
 app.use(express.json());
+
+app.use(
+    cors({
+        origin: "https://gaming-gear-tienda-online-zkoh.vercel.app",
+        credentials: true
+    })
+);
+
 
 app.use("/api/categories", categoriesRoutes);
 app.use("/api/cart", cartRoutes);

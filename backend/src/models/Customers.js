@@ -15,7 +15,7 @@ const customerSchema = new Schema(
     edad: {
       type: Number,
       required: true,
-      min: 18,
+      min: 0,
       max: 100,
       description: "Edad del cliente",
     },
