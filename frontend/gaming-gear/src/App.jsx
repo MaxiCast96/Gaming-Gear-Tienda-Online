@@ -3,39 +3,40 @@ import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 // componentes de interfaz
-import Nav from "../src/components/nav";
-import Footer from './components/footer';
-import NavAdmin from "../src/components/navAdmin";
+import Nav from "./components/Nav";
+import Footer from './components/Footer';
+import NavAdmin from "./components/NavAdmin";
 
 // paginas de la tienda
-import Inicio from './pages/inicio';
-import Categories from "./pages/categories";
-import UserProfile from "./pages/userProfile";
-import Cart from "./pages/cart";
+import Inicio from './pages/Inicio';
+import Categories from "./pages/Categories";
+import UserProfile from "./pages/UserProfile";
+import Cart from "./pages/Cart";
 import ProductDetail from "./pages/productDetail";
-import AboutUs from "./pages/aboutUs";
-import TerminosCondiciones from "./pages/terminosCondiciones";
-import ResenasProducto from "./pages/resenasProductos";
+import AboutUs from "./pages/AboutUs";
+import TerminosCondiciones from "./pages/TerminosCondiciones";
+import ResenasProducto from "./pages/ResenasProductos";
 import PantallaCheckout from "./pages/PantallaCheckout";
-import CarritoCompras from "./pages/carritoCompras";
-import Noticias from "./pages/noticias";
-import Favorites from "./pages/favoritos";
-import Categoria from "./pages/categoria";
-import Login from "./pages/login";
-import Signup from "./pages/signup";
-import NoticiaDetalle from "./pages/noticiaDetalle";
+import CarritoCompras from "./pages/CarritoCompras";
+import Noticias from "./pages/Noticias";
+import Favorites from "./pages/Favoritos";
+import Categoria from "./pages/Categoria";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import NoticiaDetalle from "./pages/NoticiaDetalle";
+import OrderHistory from "./pages/OrderHidtory";
 
 // paginas de empleado
-import AdminDashboard from "./pages/admin/adminDashboard";
-import ClientSupport from "./pages/admin/clientSupport";
-import FirstUse from "./pages/admin/firstUse";
-import InitialConfig from "./pages/admin/initialConfig";
-import Notifications from "./pages/admin/notifications";
-import OrderManage from "./pages/admin/orderManage";
-import PaswordRecovery from "./pages/admin/passwordRecovery";
-import ProductManage from "./pages/admin/productManage";
-import ShopConfig from "./pages/admin/shopConfig";
-import UserMange from "./pages/admin/userManage";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import ClientSupport from "./pages/admin/ClientSupport";
+import FirstUse from "./pages/admin/FirstUse";
+import InitialConfig from "./pages/admin/InitialConfig";
+import Notifications from "./pages/admin/Notifications";
+import OrderManage from "./pages/admin/OrderManage";
+import PaswordRecovery from "./pages/admin/PasswordRecovery";
+import ProductManage from "./pages/admin/ProductManage";
+import ShopConfig from "./pages/admin/ShopConfig";
+import UserMange from "./pages/admin/UserManage";
 
 function App() {
   return (
@@ -68,9 +69,15 @@ function App() {
                 </ProtectedRoute>
               } />
               
-              <Route path="/products" element={
+              <Route path="/products/:id" element={
                 <ProtectedRoute allowedRoles={['client']} requireAuth={false}>
                   <ProductDetail />
+                </ProtectedRoute>
+              } />
+
+               <Route path="/product/:id/reviews" element={
+                <ProtectedRoute allowedRoles={['client']} requireAuth={false}>
+                  <ResenasProducto />
                 </ProtectedRoute>
               } />
               
@@ -113,7 +120,7 @@ function App() {
               
               <Route path="/favorites" element={
                 <ProtectedRoute allowedRoles={['client']}>
-                  <Favorites />
+                  <OrderHistory />
                 </ProtectedRoute>
               } />
               

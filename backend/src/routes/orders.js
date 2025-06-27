@@ -10,6 +10,7 @@ router
 
 router
   .route("/:id")
+  .get(pedidoController.getPedidoById)
   .put(pedidoController.updatePedido)
   .delete(pedidoController.deletePedido);
 

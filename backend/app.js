@@ -14,10 +14,24 @@ import reviewsRoutes from '../backend/src/routes/reviews.js'
 import registerRoutes from './src/routes/register.js'
 import loginRoute from '../backend/src/routes/login.js'
 import recoveryPasswordRoutes from '../backend/src/routes/recoveryPassword.js'
+import cors from 'cors'
+import confirmationRoutes from '../backend/src/routes/confirmationRoutes.js';
+import resendRoutes from '../backend/src/routes/resendRoutes.js';
+import passwordRecoveryRoutes from '../backend/src/routes/passwordRecovery.js';
+
 
 //Creo una constante que es igual a la libreria
 
 const app = express();
+
+app.use(cors({
+  origin: "http://localhost:5173"
+}));
+
+// Aumentar el límite para JSON
+app.use(express.json({ limit: '50mb' })); // O el tamaño que necesites
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
+
 
 app.use(express.json());
 
@@ -37,5 +51,9 @@ app.use("/api/register", registerRoutes); // Ahora tendrás /api/register/employ
 app.use("/api/login", loginRoute);
 app.use("/api/RecoveryPassword", recoveryPasswordRoutes);
 //Exporto la constante para poder usar express en otros archivos
+
+app.use("/api/confirm-registration", confirmationRoutes);
+app.use("/api/resend-confirmation", resendRoutes);
+app.use('/api', passwordRecoveryRoutes);
 
 export default app;

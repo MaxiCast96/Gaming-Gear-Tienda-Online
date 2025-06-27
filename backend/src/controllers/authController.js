@@ -4,6 +4,9 @@ import employeeModel from "../models/Employees.js";
 import customerModel from "../models/Customers.js";
 import { config } from "../config.js";
 
+
+
+
 // Registro de empleados y clientes
 export const registerController = {
   registerEmployee: async (req, res) => {

@@ -25,6 +25,15 @@ const productsSchema = new Schema(
         type: String,
         description: "Descripción del producto",
       },
+      imagenPrincipal: {
+      type: String,
+      required: true,
+      description: "Imagen principal del producto",
+    },
+    imagenesSecundarias: {
+      type: [String], // Array de imágenes secundarias
+      description: "Imágenes secundarias del producto",
+    }
     },
     { timestamps: true }
   );

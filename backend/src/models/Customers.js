@@ -56,13 +56,34 @@ const customerSchema = new Schema(
       type: Boolean,
       default: true,
       description: "Estado activo del cliente",
-    }
+    },
+    // NUEVOS CAMPOS PARA CONFIRMACIÓN
+    isConfirmed: {
+      type: Boolean,
+      default: false,
+      description: "Si el email ha sido confirmado",
+    },
+    confirmationCode: {
+      type: String,
+      description: "Código de confirmación enviado por email",
+    },
+    confirmationCodeExpires: {
+      type: Date,
+      description: "Fecha de expiración del código de confirmación",
+    },
+    recoveryCode: {
+    type: String,
+    default: null
+  },
+  recoveryExpires: {
+    type: Date,
+    default: null
+  }
   },
   { 
     timestamps: true,
     versionKey: false
   }
 );
-
 
 export default models.Customers || model("Customers", customerSchema);
